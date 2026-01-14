@@ -1,0 +1,11 @@
+{
+  "name": "os_cinema",
+  "version": "0.1.0",
+  "description": "AI-native OS for episodic cinematic production",
+  "author": "Envis",
+  "capabilities": {
+    "agents": true,
+    "skills": true,
+    "commands": true
+  }
+}
