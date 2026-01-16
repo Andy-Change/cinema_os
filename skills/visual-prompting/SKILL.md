@@ -16,10 +16,12 @@ This skill provides a structured framework for generating high-fidelity cinemati
 
 ## Professional Formulas
 
-### The Master Formula
-`[Subject Description] -- [Action/Environment] -- [Medium & Camera Tech] -- [Lighting & Atmos] -- [Color Palette] -- [Artist/Style Influence]`
+### The Final Assembly Template (v2)
+Follow the 10-block structure in [prompt-structure.md](references/prompt-structure.md):
+`[0] CONTEXT ➜ [1] INTENT ➜ [2] SUBTEXT ➜ [3] SCENE ➜ [4] SUBJECT ➜ [5] ACTION ➜ [6] CAMERA ➜ [7] LIGHT ➜ [8] STYLE ➜ [9] INTEGRATION`
 
 ## Technical References
+- **Prompt Assembly**: See [prompt-structure.md](references/prompt-structure.md) for the 10-block modular template.
 - **Model Specifics**: See [models.md](references/models.md) for MJ parameters, SD weights, and DALL-E 3 adjectives.
 - **Cinematography Bible**: See [cinematography.md](references/cinematography.md) for shot sizes, angles, and professional lighting.
 - **Advanced Techniques**: See [techniques.md](references/techniques.md) for Few-shot and Chain-of-Thought creative workflows.

@@ -9,13 +9,15 @@ This skill enables agents to weave external commercial entities into the story w
 
 ## Workflow
 
-1.  **Identity Scan**: Load brand values from `references/brand_values.md`.
-2.  **Context Matching**: Identify scenes where the brand naturally fits (e.g., a high-tech car in a neo-noir cityscape).
-3.  **Subtle Weaving**: Focus on functional or aesthetic utility rather than "commercial" mentions.
+## Integration Levels
+- **LEVEL 1 — ENVIRONMENTAL (80%)**: Clothing, background objects. (**Scene-first**)
+- **LEVEL 2 — INTERACTION (15%)**: Subject uses the product. (**Scene-first + adaptation**)
+- **LEVEL 3 — HERO ARTIFACT (5%)**: Product is the center of the scene. (**Artifact-first**)
 
-## Core Principles
-- **Immersion First**: The story takes precedence. If a brand feels forced, reject or modify the integration.
-- **Visual utility**: Prioritize brands as part of the visual environment (Visual Ctrl agent's concern).
+## Integration Models
+- **Model A (Scene-First)**: Story and aesthetics take precedence. Adapt brand to the world.
+- **Model B (Artifact-First)**: Specific scene/micro-story engineered specifically for the brand's hero moment.
 
 ## Resources
-- See [brand_values.md](references/brand_values.md) for specific brand definitions.
+- See [brand_values.md](references/brand_values.md) for definitions.
+- Detailed logic in [prompt-structure.md](../../visual-prompting/references/prompt-structure.md).

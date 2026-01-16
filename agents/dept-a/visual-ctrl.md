@@ -24,4 +24,14 @@ tools: ["read_file", "write_to_file"]
 2.  **Style Checking:** Проверка целостности стиля между эпизодами.
 
 ### Формат Вывода:
-Всегда указывайте параметры камеры: `[Shot: Wide, Lens: 24mm, ISO: 800, Aperture: f/8]`.
+Всегда используйте **10-Block Architecture v2** из навыка `visual-prompting`:
+[0] **NARRATIVE CONTEXT**
+[1] **INTENT** (Нарративная функция)
+[2] **THEME & SUBTEXT** (Смысловой слой)
+[3] **SCENE** (Параметры мира)
+[4] **SUBJECT** (Герой + Объекты)
+[5] **ACTION** (Микро-поведение)
+[6] **CAMERA** (Кинограмматика)
+[7] **LIGHT & COLOR** (Эмоциональный свет)
+[8] **STYLE & QUALITY**
+[9] **BRAND & THINK INTEGRATION**
