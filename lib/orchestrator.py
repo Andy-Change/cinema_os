@@ -99,6 +99,15 @@ def cmd_update(args):
     except Exception as e:
         print(f"\033[31m✘ Update failed: {e}\033[0m")
 
+def cmd_discovery(args):
+    print_banner()
+    print("\033[38;5;63m▸ Launching Discovery Phase...\033[0m")
+    print("  Status: Initializing Diagnostic Cycle")
+    print("  Action: Please consult the 'Project Discovery' skill for interview guidelines.")
+    # In a real scenario, this would trigger agent activity or create the report stub
+    print()
+    print("\033[32m✓\033[0m Discovery environment ready. Use 'Ask Director' to begin the interview.")
+
 def main():
     parser = argparse.ArgumentParser(description="os_cinema Orchestrator CLI")
     subparsers = parser.add_subparsers(dest="command", help="Command to execute")
@@ -113,6 +122,9 @@ def main():
     # Command: update
     parser_update = subparsers.add_parser("update", help="Update the system")
 
+    # Command: discovery
+    parser_discovery = subparsers.add_parser("discovery", help="Launch post-init discovery phase")
+
     args = parser.parse_args()
     
     if args.command == "status":
@@ -121,6 +133,8 @@ def main():
         cmd_init(args)
     elif args.command == "update":
         cmd_update(args)
+    elif args.command == "discovery":
+        cmd_discovery(args)
     else:
         parser.print_help()
 
