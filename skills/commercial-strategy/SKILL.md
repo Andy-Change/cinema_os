@@ -23,4 +23,18 @@ This skill automates the pricing of attention and cultural context within Cinema
 
 ## Guidelines
 - **Integrity Filter**: If the brand integration disrupts the [0] NARRATIVE CONTEXT of the episode, increase the price (Risk Premium) or reject.
-- **System Brand Anchor**: The System Brand (Tier 4) defines the world's logic and takes priority in UI/Interaction layers. All other brands must coexist within this systemic framework.
+- **System Brand Anchor**: The System Brand (Tier 4) defines the *narrative* world's logic and takes priority in visual and interaction layers of the film. It is a plot-defining partner, not an internal OS component.
+
+## Human Participation Rules
+We do not do personal PR. Humans can be Signals or Contributors, never Heroes.
+
+### Formats
+1.  **FORMAT A — CHARACTER**: Fictional role. **Cannot be bought**.
+2.  **FORMAT B — CONTRIBUTOR** (Tier H2): Source of knowledge/experience. No visual dominance.
+3.  **FORMAT C — SIGNAL** (Tier H1): Ambient presence. No plot influence.
+
+### Red Flags (Immediate Veto)
+- Wants to play themselves.
+- Demands recognizability or "expert" status.
+- Mentions social media or personal projects.
+- Wants to control representation.

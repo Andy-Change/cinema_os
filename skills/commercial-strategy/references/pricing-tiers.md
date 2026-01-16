@@ -18,10 +18,12 @@
 - **Exposure**: 1–2 episodes, focal point.
 - **Constraint**: Only 1 brand per level/category.
 
-## TIER 4 — SEASON PARTNER (€150k – €250k)
-- **Concept**: Brand becomes part of the Season's DNA.
-- **Includes**: Multi-layered presence (Visual + Conceptual + Artifact).
-- **Extra**: Mention in all transmedia channels, Access to audience insights.
+## TIER 4 — SYSTEM BRAND (€250k – €450k)
+- **Concept**: The anchor brand around which the entire plot/narrative is built.
+- **Includes**: Systemic presence (UI, logic, core world mechanics *within the story*).
+- **Exposure**: Permanent presence in every episode + final meta-episode.
+- **Role**: This is the "Engine" of the narrative world.
+- **Extra**: Mention in all transmedia channels, Season Artifact co-branding, deep audience analytics.
 
 ---
 
