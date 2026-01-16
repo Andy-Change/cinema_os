@@ -81,47 +81,26 @@ def cmd_discovery(args):
     # Detect Season
     seasons_dir = os.path.join("output", "seasons")
     if not os.path.exists(seasons_dir):
-        print("\033[31m✘ Error:\033[0m No 'output/seasons' directory found.")
-        print("  \033[38;5;250mAction:\033[0m Please run '\033[38;5;63mpython lib/orchestrator.py init\033[0m' first.")
+        print("\033[31m✘ Ошибка:\033[0m Директория 'output/seasons' не найдена.")
+        print("  \033[38;5;250mДействие:\033[0m Пожалуйста, запустите '\033[38;5;63mpython lib/orchestrator.py init\033[0m'.")
         return
         
-    # Get all directories except Genesis
     seasons = [d for d in os.listdir(seasons_dir) if os.path.isdir(os.path.join(seasons_dir, d))]
     production_seasons = [d for d in seasons if d != "Season-00-Genesis"]
     
     if not production_seasons:
-        print("\033[31m✘ Error:\033[0m No active production season found.")
-        print("  \033[38;5;250mAction:\033[0m Run '\033[38;5;63mpython lib/orchestrator.py init\033[0m' to create your first season.")
+        print("\033[31m✘ Ошибка:\033[0m Активный сезон не найден.")
+        print("  \033[38;5;250mДействие:\033[0m Запустите '\033[38;5;63mpython lib/orchestrator.py init\033[0m'.")
         return
         
     active_season = sorted(production_seasons)[-1]
-    blueprint_path = os.path.join(seasons_dir, active_season, "blueprints")
-    report_file = os.path.join(blueprint_path, "discovery_report.md")
-    template_path = os.path.join("skills", "project-discovery", "assets", "discovery_report_template.md")
-
-    print(f"\033[38;5;63m▸ Launching Discovery for {active_season}...\033[0m")
-    
-    # Auto-create report if missing
-    if not os.path.exists(report_file):
-        if os.path.exists(template_path):
-            with open(template_path, 'r', encoding='utf-8') as t, open(report_file, 'w', encoding='utf-8') as r:
-                content = t.read().replace("[SEASON_ID]", active_season)
-                r.write(content)
-            print(f"  \033[32m✓\033[0m Created Discovery Report: {report_file}")
-        else:
-            print("  \033[33m!\033[0m Template not found. Creating empty report.")
-            with open(report_file, 'w', encoding='utf-8') as f:
-                f.write(f"# Discovery Report: {active_season}\n\n[Fill based on Project Discovery skill]")
-            print(f"  \033[32m✓\033[0m Created empty report: {report_file}")
-    else:
-        print(f"  \033[36m•\033[0m Report already exists: {report_file}")
-
+    print(f"\033[38;5;63m▸ Режим Discovery для {active_season} активен.\033[0m")
     print()
-    print("  \033[38;5;250mAction Required:\033[0m")
-    print("  1. Open the report file and review the structure.")
-    print("  2. Ask your Director agent to start the narrative interview.")
+    print("  \033[38;5;250mСледующий шаг:\033[0m")
+    print("  Пожалуйста, начните свободный диалог с агентом \033[36mMeaning Owner\033[0m.")
+    print("  Он проведет вас через интервью и поможет собрать данные для Эпизода 01.")
     print()
-    print("\033[32m✓\033[0m Environment Ready.")
+    print("\033[32m✓\033[0m Окружение готово.")
 
 def main():
     parser = argparse.ArgumentParser(description="os_cinema Orchestrator CLI")

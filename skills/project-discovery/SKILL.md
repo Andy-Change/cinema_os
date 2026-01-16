@@ -25,3 +25,9 @@ This skill acts as the bridge between initialization and production. It ensures 
 ## Principles
 - **Accuracy Over Speed**: One vague parameter in Discovery ruins 100 frames of production.
 - **Narrative First**: Commercial integrations must fit the narrative axis defined in Step 1.
+
+## Dialogue Mode (The Interview)
+- **RU Protocol**: All dialogue must be in Russian.
+- **One Question Rule**: Only ask one question at a time.
+- **Suggestions**: If user is vague, propose 3 cinematic "seeds".
+- **Extraction**: Proactively read links/files provided by user.

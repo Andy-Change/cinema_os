@@ -29,5 +29,16 @@ Before marking a task as "Ready for Review", you MUST verify:
 - [ ] **Clean Git State**: Ensure all new files are added to the worktree staging.
 - [ ] **UTF-8 Integrity**: Confirm all text files use UTF-8 encoding without BOM.
 
+## 4. Language Protocol (RU/EN)
+**Russian (RU) is the primary language for all user-facing interactions, narrative drafts, and discovery interviews.**
+
+- **User Communication**: Always respond in Russian unless explicitly asked otherwise.
+- **Narrative Content**: Screenplays, themes, and subtext must be drafted in Russian.
+- **Prompt Engineering**: Technical prompts for AI models (Layer 2 Control, MJ/SD prompts) stay in English.
+
+## 5. Season Management
+- **Single Season Lock**: To maintain focus, only one active season is allowed per workspace (`os_cinema`).
+- **Initialization**: `/film-init` will fail if a season already exists in `output/seasons`.
+
 ---
 *Note: This is a living document. Updates must be cleared by the Chief Orchestrator.*
