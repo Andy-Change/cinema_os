@@ -15,15 +15,10 @@
 ## TIER 3 — HERO ARTIFACT (€80k – €120k)
 - **Concept**: Product is the anchor of a micro-scene (Artifact-first).
 - **Includes**: Scene designed around the object.
-- **Exposure**: 1–2 episodes, focal point.
-- **Constraint**: Only 1 brand per level/category.
+- **Exposure**: 1–2 episodes (or recurring as key object), focal point.
+- **Examples**: Think (Season 1 Hero), Key tech device.
+- **Constraint**: Max 2 brands per season at this level.
 
-## TIER 4 — SYSTEM BRAND (€250k – €450k)
-- **Concept**: The anchor brand around which the entire plot/narrative is built.
-- **Includes**: Systemic presence (UI, logic, core world mechanics *within the story*).
-- **Exposure**: Permanent presence in every episode + final meta-episode.
-- **Role**: This is the "Engine" of the narrative world.
-- **Extra**: Mention in all transmedia channels, Season Artifact co-branding, deep audience analytics.
 
 ---
 
