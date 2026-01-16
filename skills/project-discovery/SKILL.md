@@ -9,24 +9,18 @@ This skill acts as the bridge between initialization and production. It ensures 
 
 ## Core Workflow
 
-1.  **Narrative Ingestion**:
-    - Define the **Season Theme** (philosophical axis).
-    - Identify the **Primary Conflict** (A vs B).
-    - Establish the **Emotional Temperature**.
+1.  **Context Audit**:
+    - Scan available files, links, and previous session context.
+    - Extract entities, themes, and commercial requirements.
 
-2.  **Commercial Mapping**:
-    - Identify target brands for **Tier 3 (Hero Artifact)** slots.
-    - Map potential **Tier 1/2** background presence.
-    - Define human participation slots (**H1-H4**).
+2.  **The Interview (Interactive Dialogue)**:
+    - **Step-by-Step Questioning**: Don't dump all questions at once. Ask one, wait for the answer.
+    - **Proactive Suggestions**: If the user is unsure ("не знаю", "предложи сам"), provide 3 distinct cinematic directions (e.g., Cyberpunk Noir, Solar-punk, Clinical Hard Sci-Fi).
+    - **File/URL Extraction**: Automatically digest any uploaded data and use it to populate the report.
 
-3.  **Technical Guardrails**:
-    - Confirm **Global Style Prompt** (Visual DNA).
-    - Set target **Resolution/Aspect Ratio**.
-    - Verify **Model Selection** for the season.
-
-4.  **Report Generation**:
+3.  **Synthesis**:
     - Compile findings into `blueprints/discovery_report.md`.
-    - Request showrunner (User) approval.
+    - Generate a visual `meaning_map.md` (Theme -> Visual Arc).
 
 ## Principles
 - **Accuracy Over Speed**: One vague parameter in Discovery ruins 100 frames of production.

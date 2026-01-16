@@ -81,15 +81,20 @@ def cmd_discovery(args):
     # Detect Season
     seasons_dir = os.path.join("output", "seasons")
     if not os.path.exists(seasons_dir):
-        print("\033[31m✘ Error:\033[0m No seasons found. Run '/film-init' first.")
+        print("\033[31m✘ Error:\033[0m No 'output/seasons' directory found.")
+        print("  \033[38;5;250mAction:\033[0m Please run '\033[38;5;63mpython lib/orchestrator.py init\033[0m' first.")
         return
         
-    seasons = [d for d in os.listdir(seasons_dir) if os.path.isdir(os.path.join(seasons_dir, d)) and d != "Season-00-Genesis"]
-    if not seasons:
+    # Get all directories except Genesis
+    seasons = [d for d in os.listdir(seasons_dir) if os.path.isdir(os.path.join(seasons_dir, d))]
+    production_seasons = [d for d in seasons if d != "Season-00-Genesis"]
+    
+    if not production_seasons:
         print("\033[31m✘ Error:\033[0m No active production season found.")
+        print("  \033[38;5;250mAction:\033[0m Run '\033[38;5;63mpython lib/orchestrator.py init\033[0m' to create your first season.")
         return
         
-    active_season = sorted(seasons)[-1]
+    active_season = sorted(production_seasons)[-1]
     blueprint_path = os.path.join(seasons_dir, active_season, "blueprints")
     report_file = os.path.join(blueprint_path, "discovery_report.md")
     template_path = os.path.join("skills", "project-discovery", "assets", "discovery_report_template.md")
