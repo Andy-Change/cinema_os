@@ -23,4 +23,4 @@ This skill automates the pricing of attention and cultural context within Cinema
 
 ## Guidelines
 - **Integrity Filter**: If the brand integration disrupts the [0] NARRATIVE CONTEXT of the episode, increase the price (Risk Premium) or reject.
-- **Think Overlap**: Ensure brand presence doesn't conflict with "Think" layer prominence.
+- **System Brand Anchor**: The System Brand (Tier 4) defines the world's logic and takes priority in UI/Interaction layers. All other brands must coexist within this systemic framework.
