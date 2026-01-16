@@ -29,8 +29,10 @@ Always output the **Layer 2 Control Schema** (JSON) for automation.
 - **Model Specifics**: See [models.md](references/models.md) for MJ parameters, SD weights, and DALL-E 3 adjectives.
 - **Cinematography Bible**: See [cinematography.md](references/cinematography.md) for shot sizes, angles, and professional lighting.
 - **Advanced Techniques**: See [techniques.md](references/techniques.md) for Few-shot and Chain-of-Thought creative workflows.
+- **High-Fidelity Realism**: See [realism.md](references/realism.md) for skin/eye micro-detail injection in close-ups.
 
 ## Guidelines
 - **Negative Prompting**: Always specify what to exclude (e.g., "deformed hands", "text", "low resolution").
 - **Camera Tech**: Use specific lens terms (e.g., "85mm fixed lens", "Anamorphic widescreen") for cinematic depth.
 - **Lighting**: Use professional terms (e.g., "Volumetric lighting", "Rim light", "Golden hour").
+- **Realism Protocol**: For any Close-Up or Portrait, YOU MUST append the text from [realism.md](references/realism.md) to the prompt.
