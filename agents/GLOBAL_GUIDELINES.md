@@ -1,5 +1,9 @@
 # OS Cinema: Global Agent Guidelines (SOP)
 
+> [!CAUTION]
+> **ЯЗЫКОВОЙ ПРОТОКОЛ: РУССКИЙ (RU)**
+> Все общение с пользователем, обсуждение идей и нарративные артефакты должны быть СТРОГО на русском языке. Английский допустим только для технических промптов (Layer 2 / Image Generation).
+
 This document serves as the primary operational protocol for all agents within the Cinema OS environment. Adherence to these guidelines ensures system integrity and narrative consistency.
 
 ## 1. Worktree & Branching Protocol

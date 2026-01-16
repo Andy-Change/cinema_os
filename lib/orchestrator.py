@@ -73,7 +73,38 @@ def cmd_status(args):
     print("  - \033[38;5;63m/film-update\033[0m   Pull latest system updates")
     print()
 
-# ... (cmd_init and cmd_update remains same)
+def cmd_init(args):
+    # Strict Limit: One season per project
+    seasons_dir = os.path.join("output", "seasons")
+    if os.path.exists(seasons_dir):
+        existing = [d for d in os.listdir(seasons_dir) if os.path.isdir(os.path.join(seasons_dir, d))]
+        if existing:
+            print(f"\033[31m✘ Ошибка:\033[0m Сезон уже существует: \033[36m{existing[0]}\033[0m.")
+            print("  В данный момент разрешен только один активный сезон на проект.")
+            return
+
+    season_name = args.season or f"Season-01-{datetime.now().strftime('%Y%m')}"
+    season_path = os.path.join("output", "seasons", season_name)
+    
+    os.makedirs(os.path.join(season_path, "blueprints"))
+    os.makedirs(os.path.join(season_path, "production"))
+    os.makedirs(os.path.join(season_path, "distribution"))
+    
+    # Create Season DNA Stub
+    with open(os.path.join(season_path, "blueprints", "season_dna.yaml"), "w", encoding='utf-8') as f:
+        f.write(f"season_id: {season_name}\nstatus: planning\ncreated_at: {datetime.now().isoformat()}")
+
+    print(f"\033[32m✓\033[0m Инициализирован новый сезон: {season_path}")
+
+def cmd_update(args):
+    print("\033[38;5;244m> Проверка обновлений...\033[0m")
+    try:
+        # Simple git pull
+        result = os.popen("git pull").read()
+        print(f"\033[32m{result}\033[0m")
+        print("\033[32m✓\033[0m Система обновлена.")
+    except Exception as e:
+        print(f"\033[31m✘ Ошибка обновления: {e}\033[0m")
 
 def cmd_discovery(args):
     print_banner()
