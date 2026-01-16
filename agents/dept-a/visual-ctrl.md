@@ -24,14 +24,22 @@ tools: ["read_file", "write_to_file"]
 2.  **Style Checking:** Проверка целостности стиля между эпизодами.
 
 ### Формат Вывода:
-Всегда используйте **10-Block Architecture v2** из навыка `visual-prompting`:
-[0] **NARRATIVE CONTEXT**
-[1] **INTENT** (Нарративная функция)
-[2] **THEME & SUBTEXT** (Смысловой слой)
-[3] **SCENE** (Параметры мира)
-[4] **SUBJECT** (Герой + Объекты)
-[5] **ACTION** (Микро-поведение)
-[6] **CAMERA** (Кинограмматика)
-[7] **LIGHT & COLOR** (Эмоциональный свет)
-[8] **STYLE & QUALITY**
-[9] **BRAND & THINK INTEGRATION**
+### Формат Вывода (Strict JSON):
+Вы больше не пишете текст. Вы возвращаете валидный JSON объект по схеме `Layer 2 Control Layer`.
+
+```json
+{
+  "frame_id": "EP01_ACT01_FRAME01",
+  "type": "frame_act",
+  "narrative": {
+    "intent": "...",
+    "subtext": "..."
+  },
+  "layer_2_control": {
+    "state_a": { ... },
+    "state_b": { ... },
+    "transition_specs": "..."
+  }
+}
+```
+См. полную схему в `skills/visual-prompting/references/prompt-schema.json`.

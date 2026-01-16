@@ -11,14 +11,18 @@ This skill provides a structured framework for generating high-fidelity cinemati
 
 1.  **Define Intent**: Determine the cinematic purpose (Key art, Storyboard, Palette ref).
 2.  **Select Model**: Choose the best engine (Midjourney for artistry, SD for control, DALL-E 3 for logic).
-3. **Construct Prompt**: Use the **Subject-Medium-Style-Lighting-Composition** formula, citing specific technicals from [cinematography.md](references/cinematography.md).
-4.  **Iterate & Refine**: Use negative prompts and weighting to tune output.
+3.  **Define 5-Level Hierarchy**: Reference [prompt-structure.md](references/prompt-structure.md) for Global, Season, and Episode context.
+4.  **Construct Frame Act (Layer 1)**: Write the narrative prompt for the "Act" (not just the image).
+5.  **Compile to JSON (Layer 2)**: Convert the narrative into the strict JSON Schema defined in [prompt-schema.json](references/prompt-schema.json).
+6.  **Validate References (Layer 3)**: Ensure reference consistency.
 
 ## Professional Formulas
 
-### The Final Assembly Template (v2)
-Follow the 10-block structure in [prompt-structure.md](references/prompt-structure.md):
-`[0] CONTEXT ➜ [1] INTENT ➜ [2] SUBTEXT ➜ [3] SCENE ➜ [4] SUBJECT ➜ [5] ACTION ➜ [6] CAMERA ➜ [7] LIGHT ➜ [8] STYLE ➜ [9] INTEGRATION`
+### The Frame=Act Standard
+We do not generate static images. We generate **Acts**.
+`FRAME N (ACT) = IMAGE A (Start) + IMAGE B (End) + TRANSITION (A->B)`
+
+Always output the **Layer 2 Control Schema** (JSON) for automation.
 
 ## Technical References
 - **Prompt Assembly**: See [prompt-structure.md](references/prompt-structure.md) for the 10-block modular template.

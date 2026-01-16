@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OS Cinema Frame Act Schema",
+    "type": "object",
+    "properties": {
+        "frame_id": {
+            "type": "string",
+            "description": "Unique identifier, e.g., EP01_ACT01_FRAME01"
+        },
+        "layer_1_narrative": {
+            "type": "object",
+            "properties": {
+                "context": {
+                    "type": "string"
+                },
+                "intent": {
+                    "type": "string"
+                },
+                "subtext": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "intent",
+                "subtext"
+            ]
+        },
+        "layer_2_control": {
+            "type": "object",
+            "properties": {
+                "scene_global": {
+                    "type": "string",
+                    "description": "Location, Atmos, Time"
+                },
+                "state_a": {
+                    "type": "object",
+                    "properties": {
+                        "camera": {
+                            "type": "string"
+                        },
+                        "subject": {
+                            "type": "string"
+                        },
+                        "action_start": {
+                            "type": "string"
+                        },
+                        "light": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "state_b": {
+                    "type": "object",
+                    "properties": {
+                        "delta_action": {
+                            "type": "string",
+                            "description": "What changed?"
+                        },
+                        "camera_movement": {
+                            "type": "string"
+                        },
+                        "new_focus": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "transition_specs": {
+                    "type": "string",
+                    "description": "Motion quality (e.g., No cuts, slow push)"
+                }
+            },
+            "required": [
+                "state_a",
+                "state_b"
+            ]
+        },
+        "layer_3_refs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of reference paths or names"
+        }
+    },
+    "required": [
+        "frame_id",
+        "layer_1_narrative",
+        "layer_2_control"
+    ]
+}
