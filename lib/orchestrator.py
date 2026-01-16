@@ -32,41 +32,34 @@ def cmd_status(args):
     # Scan Agents
     agents_root = "agents"
     found_agents = []
+    # Explicit mapping for departments
+    dept_map = {
+        "DEPT-A": ("[A]", "Aesthetics & Meaning", "\033[38;5;166m"),
+        "DEPT-D": ("[D]", "Distribution", "\033[38;5;118m"),
+        "DEPT-I": ("[I]", "Intelligence", "\033[38;5;039m"),
+        "DEPT-O": ("[O]", "Operations", "\033[38;5;63m"),
+    }
+    
     for root, dirs, files in os.walk(agents_root):
-        for file in files:
-            if file.endswith(".md") and file != "orchestrator.md":
-                display_name = file.replace(".md", "").replace("-", " ").title()
-                dept = os.path.basename(root).upper()
-                found_agents.append((dept, display_name))
+        dept_key = os.path.basename(root).upper()
+        if dept_key in dept_map:
+            for file in files:
+                if file.endswith(".md") and file != "orchestrator.md":
+                    display_name = file.replace(".md", "").replace("-", " ").title()
+                    found_agents.append((dept_key, display_name))
     
     # Group by Dept
     agents_by_dept = {}
-    for dept, name in found_agents:
-        if dept not in agents_by_dept: 
-            agents_by_dept[dept] = []
-        agents_by_dept[dept].append(name)
+    for dept_key, name in found_agents:
+        if dept_key not in agents_by_dept: 
+            agents_by_dept[dept_key] = []
+        agents_by_dept[dept_key].append(name)
 
     # Print agents by department
-    for dept in sorted(agents_by_dept.keys()):
-        color = "\033[0m"
-        label = ""
-        name = ""
-        
-        if "A" in dept: 
-            color = "\033[38;5;166m"
-            label = "[A]"
-            name = "Aesthetics & Meaning"
-        elif "D" in dept: 
-            color = "\033[38;5;118m"
-            label = "[D]"
-            name = "Distribution"
-        elif "I" in dept: 
-            color = "\033[38;5;039m"
-            label = "[I]"
-            name = "Intelligence"
-        
-        print(f"{color}{label}\033[0m {name}")
-        for agent in sorted(agents_by_dept[dept]):
+    for dept_key in sorted(agents_by_dept.keys()):
+        label, dept_name, color = dept_map[dept_key]
+        print(f"{color}{label}\033[0m {dept_name}")
+        for agent in sorted(agents_by_dept[dept_key]):
             print(f"  - {agent}")
         print()
             
