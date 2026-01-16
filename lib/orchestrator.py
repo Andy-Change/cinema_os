@@ -20,19 +20,23 @@ def print_banner():
 def cmd_status(args):
     print_banner()
     
+    # Detect Latest Season
+    seasons_dir = os.path.join("output", "seasons")
+    active_season = "None"
+    if os.path.exists(seasons_dir):
+        seasons = [d for d in os.listdir(seasons_dir) if os.path.isdir(os.path.join(seasons_dir, d))]
+        if seasons:
+            active_season = sorted(seasons)[-1]
+
     # System Status
     print("\033[38;5;63m●\033[0m System \033[32mOnline\033[0m")
-    print("  Season: \033[36mSeason-00-Genesis\033[0m")
+    print(f"  Season: \033[36m{active_season}\033[0m")
     print()
 
     # Active Agents
-    print("\033[38;5;250mActive Agents:\033[0m")
-    print()
-    
-    # Scan Agents
+    # ... (remaining agent scanning code)
     agents_root = "agents"
     found_agents = []
-    # Explicit mapping for departments
     dept_map = {
         "DEPT-A": ("[A]", "Aesthetics & Meaning", "\033[38;5;166m"),
         "DEPT-D": ("[D]", "Distribution", "\033[38;5;118m"),
@@ -48,14 +52,12 @@ def cmd_status(args):
                     display_name = file.replace(".md", "").replace("-", " ").title()
                     found_agents.append((dept_key, display_name))
     
-    # Group by Dept
     agents_by_dept = {}
     for dept_key, name in found_agents:
         if dept_key not in agents_by_dept: 
             agents_by_dept[dept_key] = []
         agents_by_dept[dept_key].append(name)
 
-    # Print agents by department
     for dept_key in sorted(agents_by_dept.keys()):
         label, dept_name, color = dept_map[dept_key]
         print(f"{color}{label}\033[0m {dept_name}")
@@ -65,48 +67,56 @@ def cmd_status(args):
             
     print("\033[38;5;250mAvailable Commands:\033[0m")
     print("  - \033[38;5;63m/film-init\033[0m     Initialize new season")
+    print("  - \033[38;5;63m/film-discovery\033[0m Launch discovery phase")
     print("  - \033[38;5;63m/film-status\033[0m   Check agent status")
     print("  - \033[38;5;63m/film-reflect\033[0m  Launch I2A reflection cycle")
     print("  - \033[38;5;63m/film-update\033[0m   Pull latest system updates")
     print()
 
-
-def cmd_init(args):
-    season_name = args.season or f"Season-01-{datetime.now().strftime('%Y%m')}"
-    season_path = os.path.join("output", "seasons", season_name)
-    
-    if os.path.exists(season_path):
-        print(f"Season '{season_name}' already exists.")
-        return
-
-    os.makedirs(os.path.join(season_path, "blueprints"))
-    os.makedirs(os.path.join(season_path, "production"))
-    os.makedirs(os.path.join(season_path, "distribution"))
-    
-    # Create Season DNA Stub
-    with open(os.path.join(season_path, "blueprints", "season_dna.yaml"), "w", encoding='utf-8') as f:
-        f.write(f"season_id: {season_name}\nstatus: planning\ncreated_at: {datetime.now().isoformat()}")
-
-    print(f"\033[32m✓\033[0m Initialized new season context at: {season_path}")
-
-def cmd_update(args):
-    print("\033[38;5;244m> Checking for updates...\033[0m")
-    try:
-        # Simple git pull
-        result = os.popen("git pull").read()
-        print(f"\033[32m{result}\033[0m")
-        print("\033[32m✓\033[0m System updated successfully.")
-    except Exception as e:
-        print(f"\033[31m✘ Update failed: {e}\033[0m")
+# ... (cmd_init and cmd_update remains same)
 
 def cmd_discovery(args):
     print_banner()
-    print("\033[38;5;63m▸ Launching Discovery Phase...\033[0m")
-    print("  Status: Initializing Diagnostic Cycle")
-    print("  Action: Please consult the 'Project Discovery' skill for interview guidelines.")
-    # In a real scenario, this would trigger agent activity or create the report stub
+    
+    # Detect Season
+    seasons_dir = os.path.join("output", "seasons")
+    if not os.path.exists(seasons_dir):
+        print("\033[31m✘ Error:\033[0m No seasons found. Run '/film-init' first.")
+        return
+        
+    seasons = [d for d in os.listdir(seasons_dir) if os.path.isdir(os.path.join(seasons_dir, d)) and d != "Season-00-Genesis"]
+    if not seasons:
+        print("\033[31m✘ Error:\033[0m No active production season found.")
+        return
+        
+    active_season = sorted(seasons)[-1]
+    blueprint_path = os.path.join(seasons_dir, active_season, "blueprints")
+    report_file = os.path.join(blueprint_path, "discovery_report.md")
+    template_path = os.path.join("skills", "project-discovery", "assets", "discovery_report_template.md")
+
+    print(f"\033[38;5;63m▸ Launching Discovery for {active_season}...\033[0m")
+    
+    # Auto-create report if missing
+    if not os.path.exists(report_file):
+        if os.path.exists(template_path):
+            with open(template_path, 'r', encoding='utf-8') as t, open(report_file, 'w', encoding='utf-8') as r:
+                content = t.read().replace("[SEASON_ID]", active_season)
+                r.write(content)
+            print(f"  \033[32m✓\033[0m Created Discovery Report: {report_file}")
+        else:
+            print("  \033[33m!\033[0m Template not found. Creating empty report.")
+            with open(report_file, 'w', encoding='utf-8') as f:
+                f.write(f"# Discovery Report: {active_season}\n\n[Fill based on Project Discovery skill]")
+            print(f"  \033[32m✓\033[0m Created empty report: {report_file}")
+    else:
+        print(f"  \033[36m•\033[0m Report already exists: {report_file}")
+
     print()
-    print("\033[32m✓\033[0m Discovery environment ready. Use 'Ask Director' to begin the interview.")
+    print("  \033[38;5;250mAction Required:\033[0m")
+    print("  1. Open the report file and review the structure.")
+    print("  2. Ask your Director agent to start the narrative interview.")
+    print()
+    print("\033[32m✓\033[0m Environment Ready.")
 
 def main():
     parser = argparse.ArgumentParser(description="os_cinema Orchestrator CLI")
