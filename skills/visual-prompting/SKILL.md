@@ -18,9 +18,13 @@ This skill provides a structured framework for generating high-fidelity cinemati
 
 ## Professional Formulas
 
-### The Frame=Act Standard
-We do not generate static images. We generate **Acts**.
-`FRAME N (ACT) = IMAGE A (Start) + IMAGE B (End) + TRANSITION (A->B)`
+### The Frame=Act Standard (AI-Video)
+Мы создаем не статичную картинку, а **Акт (Действие)**.
+`FRAME N = IMAGE A (Start) + IMAGE B (End) + MOTION PROMPT`
+
+При генерации всегда учитывайте:
+1. **Dynamic Anchor**: Что остается стабильным (например, лицо персонажа).
+2. **Motion Flux**: Тип движения из [cinematography.md](references/cinematography.md#6-camera-motion-dynamic-ai-video).
 
 Always output the **Layer 2 Control Schema** (JSON) for automation.
 

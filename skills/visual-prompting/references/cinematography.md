@@ -33,3 +33,34 @@ This document contains professional cinematography standards for agents producin
 - **Golden Ratio (Fibonacci)**: For "divine" natural balance.
 - **Leading Lines**: Using environment architecture to guide the eye to the subject.
 - **Symmetrical Centering**: For static, formal tension (Wes Anderson/Kubrick).
+
+## 6. Camera Motion (Dynamic AI-Video)
+Use these technical cues for AI-video generation and "Frame Acts":
+
+### 6.1 Linear Movement
+- **Dolly In/Out**: Physical camera movement towards/away from subject (Immersive scale).
+- **Truck Left/Right**: Parallel sliding movement (Tracking a character).
+- **Pedestal Up/Down**: Physical vertical shift (Revealing massive structures).
+
+### 6.2 Rotational Movement
+- **Pan/Tilt**: Rotating on a fixed axis (Following action).
+- **Orbit (180°/360°)**: Arcing around a "Beacon" object/subject.
+- **Roll**: Rotating the camera on its own axis (Disorienting dream logic).
+
+### 6.3 Psychological & Focus Techniques
+- **Rack Focus**: Shifting focus from Foreground to Background within a single shot.
+- **Dolly Zoom (Vertigo Effect)**: Simultaneous Dolly-In + Zoom-Out (or vice versa). Creates background "breathing" while keeping the subject size constant.
+- **Crane/Jib Shot**: Sweeping vertical and horizontal arcs for epic reveals.
+
+### 6.4 AI-Video Formulas
+- **Handheld/Cinema Verite**: Adding subtle jitter for realism.
+- **Keyframe Transition**: IMAGE A -> [Movement Term] -> IMAGE B.
+
+## 7. The Face Quality Protocol (Directives)
+- **Front-Facing Faces**: When a character's face is the focal point and facing the lens, **ALWAYS prioritize Close-Up (CU)**. This ensures the AI allocates maximum pixel density to facial features, eyes, and skin texture.
+- **Scale Balance**: Use Wide Shots (WS) for environment context, but switch to CU for emotional engagement.
+
+## 8. Atmospheric Architecture (Villeneuve Style)
+- **Monolithic Scale**: Use EWS with tiny characters vs. massive structures.
+- **Volumetric Density**: Mist, haze, and "dust rays" are mandatory for depth.
+- **Color Punch**: Monochrome palette + 1 contrasting color accent.
