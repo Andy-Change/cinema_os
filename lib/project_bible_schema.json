@@ -1,0 +1,120 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "OS Cinema Project Bible",
+    "description": "The Single Source of Truth for a cinematic season.",
+    "type": "object",
+    "properties": {
+        "meta": {
+            "type": "object",
+            "properties": {
+                "season_id": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "version": {
+                    "type": "string",
+                    "default": "1.0.0"
+                }
+            }
+        },
+        "core_identity": {
+            "type": "object",
+            "description": "Defined by Meaning Owner",
+            "properties": {
+                "theme": {
+                    "type": "string"
+                },
+                "genre": {
+                    "type": "string"
+                },
+                "logline": {
+                    "type": "string"
+                },
+                "tone": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "visual_language": {
+            "type": "object",
+            "description": "Defined by Visual Controller",
+            "properties": {
+                "cinematic_style": {
+                    "type": "string",
+                    "enum": [
+                        "Villeneuve",
+                        "Nolan",
+                        "Hybrid",
+                        "Standard"
+                    ]
+                },
+                "aspect_ratio": {
+                    "type": "string"
+                },
+                "color_palette": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "script_bible": {
+            "type": "object",
+            "description": "Defined by Writer / Meaning Owner",
+            "properties": {
+                "protagonist": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "flaw": {
+                            "type": "string"
+                        },
+                        "goal": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "acts": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            }
+        },
+        "distribution_strategy": {
+            "type": "object",
+            "description": "Defined by Dept-D",
+            "properties": {
+                "target_audience": {
+                    "type": "string"
+                },
+                "platforms": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "meta",
+        "core_identity"
+    ]
+}
