@@ -68,3 +68,14 @@ Use these technical cues for AI-video generation and "Frame Acts":
 ## 9. Motivated & Witness Camera Logic
 - **Motivated Motion**: The camera is an extension of the character's eye. If the character looks, the camera pans. If the character runs, the camera trucks. Never move without a narrative trigger.
 - **The Witness Point**: Fixed position in the environment, usually at human eye level, observing the scene like a bystander. No flashy moves, just pure framing.
+
+## 10. Temporal Editing (Nolan Architecture)
+- **Reverse Chronology**: Tell the story backward to mirror disorientation or memory loss.
+- **Parallel Timelines**: Interweave multiple time scales (week/day/hour) converging on a single event.
+- **Cross-Cutting for Tension**: Rapidly switch between timelines to build suspense and cognitive engagement.
+- **Shepard Tone Principle**: Create endless escalation through editing rhythm (each cut feels more urgent than the last).
+
+## 11. Subjective Sound Design (Nolan + Zimmer)
+- **Character's Perspective**: Mix audio from inside the character's head, not for audience comfort. Dialogue can be muffled if it serves immersion.
+- **Ticking Clock Motif**: Use persistent rhythmic elements (heartbeat, machinery, watch) to create relentless tension.
+- **Music-Sound Fusion**: Blur the line between score and sound effects. Music should feel environmental, not decorative.
