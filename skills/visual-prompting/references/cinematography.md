@@ -64,3 +64,7 @@ Use these technical cues for AI-video generation and "Frame Acts":
 - **Monolithic Scale**: Use EWS with tiny characters vs. massive structures.
 - **Volumetric Density**: Mist, haze, and "dust rays" are mandatory for depth.
 - **Color Punch**: Monochrome palette + 1 contrasting color accent.
+
+## 9. Motivated & Witness Camera Logic
+- **Motivated Motion**: The camera is an extension of the character's eye. If the character looks, the camera pans. If the character runs, the camera trucks. Never move without a narrative trigger.
+- **The Witness Point**: Fixed position in the environment, usually at human eye level, observing the scene like a bystander. No flashy moves, just pure framing.

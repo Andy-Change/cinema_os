@@ -26,3 +26,9 @@ To maximize AI fidelity:
 - **Minimalist Dialogue**: Cut 50% of dialogue lines. Use silence and glances.
 - **Information Puzzle**: Reveal plot points non-linearly through visual rhymes or flashbacks.
 - **Suppressed Performance**: Characters should be emotionally restrained, making occasional outbursts more powerful.
+
+## 6. Dune Dynamics (Advanced Techniques)
+- **Aspect Ratio Switching (IMAX Logic)**: Use 1.43:1 or 1.90:1 for desert/vast exteriors to enhance verticality. Switch to 2.39:1 for tight interiors.
+- **Witness Camera (Fly-on-the-wall)**: Position the camera as a "neutral observer" in a corner of the room. Static, non-judgmental, enhancing the sense of reality.
+- **Motivated Motion**: Camera MUST only move in response to a character's movement or a shift in their attention (gaze).
+- **Telephoto Compression**: Use long lenses (100mm+) to "flatten" massive landscapes, making dunes or structures feel imposing and heavy.
